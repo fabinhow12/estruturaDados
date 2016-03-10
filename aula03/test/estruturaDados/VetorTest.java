@@ -283,6 +283,54 @@ public class VetorTest {
         
     }
 
+    @Test
+    public void testRemoveInicio(){
+        
+        Vetor vetor = new Vetor();
+        for (int i = 0; i < TOTAL; i++) {
+            Aluno aluno = new Aluno("Fulano "+i);
+            vetor.adicionaAluno(aluno);
+            
+        }
+        
+        vetor.remove(0);
+        
+        assertTrue(vetor.tamanho() == TOTAL -1);
+        
+    }
+    
+    @Test
+    public void testRemoveMeio(){
+        
+        Vetor vetor = new Vetor();
+        for (int i = 0; i < TOTAL; i++) {
+            Aluno aluno = new Aluno("Fulano "+i);
+            vetor.adicionaAluno(aluno);
+            
+        }
+        
+        vetor.remove(vetor.tamanho() / 2 );
+        
+        
+        assertTrue(vetor.tamanho() == TOTAL -1);
+        
+    }
+    
+    @Test
+    
+    public void testRemoveFim(){
+        
+        Vetor vetor = new Vetor();
+        for (int i = 0; i < TOTAL; i++) {
+            Aluno aluno = new Aluno("Fulano "+i);
+            vetor.adicionaAluno(aluno);
+            
+        }
+        
+        vetor.remove(TOTAL - 1);
+        
+        assertTrue(vetor.tamanho() == TOTAL -1);
+    }
     
     
     private void imprimirTempo(String texto, long tempo) {
