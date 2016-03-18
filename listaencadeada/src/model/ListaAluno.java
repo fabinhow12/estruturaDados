@@ -82,12 +82,11 @@ public class ListaAluno {
 
     public void removeComeco() {
         if (this.quantidade == 0) {
-            System.out.println("Não Tem Elementos na lista");
+            System.out.println("Não Possui Elementos na lista");
             
         }else{
-            Aluno aux = this.primeiro;
             primeiro = primeiro.getProximo();
-            aux.setProximo(null);
+           
             this.quantidade--;
         }
 
@@ -151,7 +150,7 @@ public class ListaAluno {
         lista.pesquisa("aluno0");
         lista.listaTodos();
         
-        lista.removeFim();
+        lista.removeComeco();
         System.out.println("");
         lista.listaTodos();
 
