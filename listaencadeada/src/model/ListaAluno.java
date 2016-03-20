@@ -105,25 +105,28 @@ public class ListaAluno {
         }
     }
 
-    public void pesquisa(String nome) {
+    public void RecuperaAluno(int posicao) {
         Aluno aux = this.primeiro;
 
         if (this.quantidade != 0) {
-
-            while (aux != null) {
-                if (aux.getNome().equalsIgnoreCase(nome)) {
-                    System.out.println("\nEncontrado " + nome);
-                    break;
+            
+            if (posicao <0 || posicao > this.quantidade){
+                
+                System.out.println("Posição Inválida");
+                
+            }else{
+                
+                for (int i = 0; i < posicao; i++) {
+                       aux = aux.getProximo();
                 }
-                aux.getProximo();
-
+                
+                System.out.println("Encontrado: "+aux.getNome());
             }
-
         } else {
             System.out.println("NÃO POSSUI ELEMENTOS NA LISTA");
         }
     }
-
+ 
     public void listaTodos() {
         if (this.quantidade == 0) {
             System.out.println("[]");
@@ -138,22 +141,5 @@ public class ListaAluno {
         }
     }
 
-    public static void main(String[] args) {
-        ListaAluno lista = new ListaAluno();
-
-        for (int i = 0; i < 50; i++) {
-            lista.addFim("Aluno" + i);
-
-        }
-
-        
-        lista.pesquisa("aluno0");
-        lista.listaTodos();
-        
-        lista.removeComeco();
-        System.out.println("");
-        lista.listaTodos();
-
-    }
 
 }
