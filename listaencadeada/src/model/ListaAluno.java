@@ -92,16 +92,31 @@ public class ListaAluno {
 
     }
     
+    public void removePosicaoQualquer(int posicao){
+            if (posicao <0 || posicao > this.quantidade){
+                System.out.println("Posição Inválida");
+            }else{
+                Aluno anterior = this.pegaAluno(posicao -1);
+                Aluno atual = anterior.getProximo();
+                Aluno proximo = atual.getProximo();
+                
+                anterior.setProximo(proximo);
+                this.quantidade--;
+                
+            }
+            
+    }
+    
     public void removeFim(){
         if (this.quantidade == 0){
             System.out.println("Não Possui elementos na lista");
-        }else{
-            Aluno aux = this.primeiro;
+        }else{     
+             Aluno aux = this.primeiro;
             while (aux.getProximo()!=null){
                  aux = aux.getProximo();
             }
                 aux.setProximo(null);
-                this.quantidade--;
+                this.quantidade--;             
         }
     }
 
@@ -141,5 +156,19 @@ public class ListaAluno {
         }
     }
 
+    private Aluno pegaAluno(int posicao){
+        if (posicao < 0 || posicao > this.quantidade){
+            throw new IllegalArgumentException("Posição Inválida");
+        }
+        
+        Aluno aux = this.primeiro;
+        
+        for (int i = 0; i < posicao; i++) {
+            aux = aux.getProximo();
+        }
+        
+        return aux;
+    }
+    
 
 }

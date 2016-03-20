@@ -13,11 +13,11 @@ package model;
 public class Aluno {
     private String nome;
     private Aluno proximo;
-
     
     
     
-
+    
+    
     public String getNome() {
         return nome;
     }
@@ -33,6 +33,6 @@ public class Aluno {
     public void setProximo(Aluno proximo) {
         this.proximo = proximo;
     }
-    
+
     
 }

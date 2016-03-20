@@ -16,13 +16,15 @@ public class Executa {
     public static void main(String[] args) {
         ListaAluno lista = new ListaAluno();
         
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 1000000 ; i++) {
             lista.addFim("Aluno " + i);
             
         }
         
-        lista.RecuperaAluno(150);
-        lista.removeFim();
+        
+        
+        lista.RecuperaAluno(500000);
+        
         
     }
     
