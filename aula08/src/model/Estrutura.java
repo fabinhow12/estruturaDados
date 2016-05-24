@@ -1,4 +1,4 @@
-/*
+/*d
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -52,7 +52,7 @@ public class Estrutura<T> implements IMetodosEstrutura<T> {
             this.tamanho--;
             this.verificaCarga();
         } else {
-            System.out.println("Não Existe essa palavra armazenada");
+            System.out.println("Não Existe essa Pessoa armazenada");
         }
     }
 
@@ -61,7 +61,7 @@ public class Estrutura<T> implements IMetodosEstrutura<T> {
         int indice = this.calculaIndiceDaTabela(palavra);
 
         List<T> lista = this.tabela.get(indice);
-        System.out.println(palavra);
+        
         return lista.contains(palavra);
     }
 
