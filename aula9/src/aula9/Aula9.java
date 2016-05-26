@@ -19,6 +19,7 @@ public class Aula9 {
     public static void main(String[] args) throws Exception {
         ArvoreBinaria teste = new ArvoreBinaria();
         
+        
         teste.adicionar(15);
         teste.adicionar(20);
         teste.adicionar(10);
@@ -26,12 +27,15 @@ public class Aula9 {
         teste.adicionar(8);
         teste.adicionar(9);
         teste.adicionar(12);
+        teste.adicionar(11);
         
         System.out.println(teste.getQuantidade());
         teste.listaArvore();
+        System.out.println(teste.pesquisa(40));
         teste.exclui(10);
-        System.out.println(teste.getQuantidade());
+        System.out.println("");
         teste.listaArvore();
+        System.out.println(teste.getQuantidade());
     }
     
 }
