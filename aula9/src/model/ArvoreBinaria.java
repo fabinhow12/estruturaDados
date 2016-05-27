@@ -64,6 +64,10 @@ public class ArvoreBinaria {
             this.raiz = new No(valor);
 
         } else {
+            
+            if (valor == elemento.getValor()){
+                System.err.println("Já Existe O valor");
+            }
 
             if (valor < elemento.getValor()) {//Verifica se o valor é menor que o do nó
 
@@ -119,17 +123,23 @@ public class ArvoreBinaria {
 
             if (valor < elemento.getValor()) {
                 elemento.setNoEsquerda(remove(elemento.getNoEsquerda(), valor));
+                
             } else if (valor > elemento.getValor()) {
+                
                 elemento.setNoEsquerda(remove(elemento.getNoDireita(), valor));
+                
             } else if (elemento.getNoEsquerda() != null && elemento.getNoDireita() != null) {
+                
                 //2 nós filhos
                 System.out.println("Removeu No: " + elemento.getValor());
                 elemento.setValor(encontraMinimo(elemento.getNoDireita()).getValor());
                 elemento.setNoDireita(removeMinimo(elemento.getNoDireita()));
+                
             } else {
                 System.out.println("Removeu No: " + elemento.getValor());
                 elemento = (elemento.getNoEsquerda() != null) ? elemento.getNoEsquerda() : elemento.getNoDireita();
             }
+            
             return elemento;
         }
 
@@ -183,6 +193,11 @@ public class ArvoreBinaria {
         }
 
         return elemento;
+    }
+    
+    private void imprimirEspecial(){
+          No aux = this.raiz;
+          
     }
 
 }

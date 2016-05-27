@@ -23,6 +23,7 @@ public class Aula9 {
         teste.adicionar(15);
         teste.adicionar(20);
         teste.adicionar(10);
+        teste.adicionar(10);
         teste.adicionar(40);
         teste.adicionar(8);
         teste.adicionar(9);
